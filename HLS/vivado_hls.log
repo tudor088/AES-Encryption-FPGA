@@ -1,0 +1,19 @@
+INFO: [HLS 200-10] Running 'D:/Programs/Vivado2018/Vivado/2018.1/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Tudor' on host 'tudorrog' (Windows NT_amd64 version 6.2) on Sun Jan 14 16:45:36 +0200 2018
+INFO: [HLS 200-10] In directory 'D:/FPGA/AES/HLS'
+INFO: [HLS 200-10] Opening project 'D:/FPGA/AES/HLS/AES_HLS'.
+INFO: [HLS 200-10] Opening solution 'D:/FPGA/AES/HLS/AES_HLS/aes'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programs/Vivado2018/Vivado/2018.1/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 14 16:45:54 2018...

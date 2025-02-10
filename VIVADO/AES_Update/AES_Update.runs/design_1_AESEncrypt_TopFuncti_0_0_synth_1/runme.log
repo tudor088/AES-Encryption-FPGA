@@ -1,0 +1,674 @@
+
+*** Running vivado
+    with args -log design_1_AESEncrypt_TopFuncti_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_AESEncrypt_TopFuncti_0_0.tcl
+
+
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source design_1_AESEncrypt_TopFuncti_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 487.074 ; gain = 183.215
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/FPGA/AES/HLS'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programs/VivadoNew/Vivado/2023.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_AESEncrypt_TopFuncti_0_0
+Command: synth_design -top design_1_AESEncrypt_TopFuncti_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3068
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1358.051 ; gain = 439.453
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_AESEncrypt_TopFuncti_0_0' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ip/design_1_AESEncrypt_TopFuncti_0_0/synth/design_1_AESEncrypt_TopFuncti_0_0.vhd:108]
+	Parameter C_S_AXI_CONTROL_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_CONTROL_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'AESEncrypt_TopFunction' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction.vhd:12' bound to instance 'U0' of component 'AESEncrypt_TopFunction' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ip/design_1_AESEncrypt_TopFuncti_0_0/synth/design_1_AESEncrypt_TopFuncti_0_0.vhd:236]
+INFO: [Synth 8-638] synthesizing module 'AESEncrypt_TopFunction' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction.vhd:67]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'AESEncrypt_TopFunction_control_s_axi' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction_control_s_axi.vhd:12' bound to instance 'AESEncrypt_TopFunction_control_s_axi_U' of component 'AESEncrypt_TopFunction_control_s_axi' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'AESEncrypt_TopFunction_control_s_axi' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction_control_s_axi.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'AESEncrypt_TopFunction_control_s_axi' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction_control_s_axi.vhd:68]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'AESEncrypt_TopFunjbC' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunjbC.vhd:106' bound to instance 'matrixText_data_V_U' of component 'AESEncrypt_TopFunjbC' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction.vhd:728]
+INFO: [Synth 8-638] synthesizing module 'AESEncrypt_TopFunjbC' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunjbC.vhd:126]
+INFO: [Synth 8-3491] module 'AESEncrypt_TopFunjbC_ram' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunjbC.vhd:13' bound to instance 'AESEncrypt_TopFunjbC_ram_U' of component 'AESEncrypt_TopFunjbC_ram' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunjbC.vhd:145]
+INFO: [Synth 8-638] synthesizing module 'AESEncrypt_TopFunjbC_ram' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunjbC.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'AESEncrypt_TopFunjbC_ram' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunjbC.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'AESEncrypt_TopFunjbC' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunjbC.vhd:126]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'AESEncrypt_TopFunkbM' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunkbM.vhd:92' bound to instance 'matrixKey_data_V_U' of component 'AESEncrypt_TopFunkbM' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction.vhd:747]
+INFO: [Synth 8-638] synthesizing module 'AESEncrypt_TopFunkbM' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunkbM.vhd:111]
+INFO: [Synth 8-3491] module 'AESEncrypt_TopFunkbM_ram' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunkbM.vhd:13' bound to instance 'AESEncrypt_TopFunkbM_ram_U' of component 'AESEncrypt_TopFunkbM_ram' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunkbM.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'AESEncrypt_TopFunkbM_ram' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunkbM.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'AESEncrypt_TopFunkbM_ram' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunkbM.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'AESEncrypt_TopFunkbM' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunkbM.vhd:111]
+INFO: [Synth 8-3491] module 'aesEncrypt' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:12' bound to instance 'grp_aesEncrypt_fu_174' of component 'aesEncrypt' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction.vhd:765]
+INFO: [Synth 8-638] synthesizing module 'aesEncrypt' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:36]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 176 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'aesEncrypt_expandhbi' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_expandhbi.vhd:76' bound to instance 'expandedKey_U' of component 'aesEncrypt_expandhbi' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:518]
+INFO: [Synth 8-638] synthesizing module 'aesEncrypt_expandhbi' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_expandhbi.vhd:91]
+INFO: [Synth 8-3491] module 'aesEncrypt_expandhbi_ram' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_expandhbi.vhd:13' bound to instance 'aesEncrypt_expandhbi_ram_U' of component 'aesEncrypt_expandhbi_ram' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_expandhbi.vhd:105]
+INFO: [Synth 8-638] synthesizing module 'aesEncrypt_expandhbi_ram' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_expandhbi.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'aesEncrypt_expandhbi_ram' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_expandhbi.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'aesEncrypt_expandhbi' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_expandhbi.vhd:91]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'aesEncrypt_roundKibs' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_roundKibs.vhd:101' bound to instance 'roundKey_data_V_U' of component 'aesEncrypt_roundKibs' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:532]
+INFO: [Synth 8-638] synthesizing module 'aesEncrypt_roundKibs' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_roundKibs.vhd:119]
+INFO: [Synth 8-3491] module 'aesEncrypt_roundKibs_ram' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_roundKibs.vhd:13' bound to instance 'aesEncrypt_roundKibs_ram_U' of component 'aesEncrypt_roundKibs_ram' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_roundKibs.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'aesEncrypt_roundKibs_ram' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_roundKibs.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'aesEncrypt_roundKibs_ram' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_roundKibs.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'aesEncrypt_roundKibs' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt_roundKibs.vhd:119]
+INFO: [Synth 8-3491] module 'mixColumns' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns.vhd:12' bound to instance 'grp_mixColumns_fu_263' of component 'mixColumns' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:549]
+INFO: [Synth 8-638] synthesizing module 'mixColumns' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns.vhd:33]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'mixColumns_gf_mulfYi' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulfYi.vhd:256' bound to instance 'gf_mul2_table_V_U' of component 'mixColumns_gf_mulfYi' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns.vhd:297]
+INFO: [Synth 8-638] synthesizing module 'mixColumns_gf_mulfYi' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulfYi.vhd:278]
+INFO: [Synth 8-3491] module 'mixColumns_gf_mulfYi_rom' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulfYi.vhd:12' bound to instance 'mixColumns_gf_mulfYi_rom_U' of component 'mixColumns_gf_mulfYi_rom' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulfYi.vhd:299]
+INFO: [Synth 8-638] synthesizing module 'mixColumns_gf_mulfYi_rom' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulfYi.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'mixColumns_gf_mulfYi_rom' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulfYi.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'mixColumns_gf_mulfYi' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulfYi.vhd:278]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'mixColumns_gf_mulg8j' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulg8j.vhd:256' bound to instance 'gf_mul3_table_V_U' of component 'mixColumns_gf_mulg8j' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns.vhd:318]
+INFO: [Synth 8-638] synthesizing module 'mixColumns_gf_mulg8j' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulg8j.vhd:278]
+INFO: [Synth 8-3491] module 'mixColumns_gf_mulg8j_rom' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulg8j.vhd:12' bound to instance 'mixColumns_gf_mulg8j_rom_U' of component 'mixColumns_gf_mulg8j_rom' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulg8j.vhd:299]
+INFO: [Synth 8-638] synthesizing module 'mixColumns_gf_mulg8j_rom' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulg8j.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'mixColumns_gf_mulg8j_rom' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulg8j.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'mixColumns_gf_mulg8j' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns_gf_mulg8j.vhd:278]
+INFO: [Synth 8-256] done synthesizing module 'mixColumns' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/mixColumns.vhd:33]
+INFO: [Synth 8-3491] module 'keyExpansion5' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5.vhd:12' bound to instance 'grp_keyExpansion5_fu_273' of component 'keyExpansion5' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:568]
+INFO: [Synth 8-638] synthesizing module 'keyExpansion5' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5.vhd:31]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'keyExpansion5_sbobkb' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_sbobkb.vhd:128' bound to instance 'sbox_V_U' of component 'keyExpansion5_sbobkb' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5.vhd:270]
+INFO: [Synth 8-638] synthesizing module 'keyExpansion5_sbobkb' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_sbobkb.vhd:141]
+INFO: [Synth 8-3491] module 'keyExpansion5_sbobkb_rom' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_sbobkb.vhd:12' bound to instance 'keyExpansion5_sbobkb_rom_U' of component 'keyExpansion5_sbobkb_rom' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_sbobkb.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'keyExpansion5_sbobkb_rom' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_sbobkb.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'keyExpansion5_sbobkb_rom' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_sbobkb.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'keyExpansion5_sbobkb' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_sbobkb.vhd:141]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 11 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'keyExpansion5_rcocud' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_rcocud.vhd:71' bound to instance 'rcon_V_U' of component 'keyExpansion5_rcocud' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5.vhd:282]
+INFO: [Synth 8-638] synthesizing module 'keyExpansion5_rcocud' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_rcocud.vhd:84]
+INFO: [Synth 8-3491] module 'keyExpansion5_rcocud_rom' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_rcocud.vhd:12' bound to instance 'keyExpansion5_rcocud_rom_U' of component 'keyExpansion5_rcocud_rom' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_rcocud.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'keyExpansion5_rcocud_rom' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_rcocud.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'keyExpansion5_rcocud_rom' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_rcocud.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'keyExpansion5_rcocud' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5_rcocud.vhd:84]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 8 - type: integer 
+	Parameter din4_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'AESEncrypt_TopFundEe' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFundEe.vhd:13' bound to instance 'AESEncrypt_TopFundEe_U9' of component 'AESEncrypt_TopFundEe' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5.vhd:294]
+INFO: [Synth 8-638] synthesizing module 'AESEncrypt_TopFundEe' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFundEe.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'AESEncrypt_TopFundEe' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFundEe.vhd:32]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 8 - type: integer 
+	Parameter din4_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'AESEncrypt_TopFundEe' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFundEe.vhd:13' bound to instance 'AESEncrypt_TopFundEe_U10' of component 'AESEncrypt_TopFundEe' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5.vhd:312]
+INFO: [Synth 8-256] done synthesizing module 'keyExpansion5' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/keyExpansion5.vhd:31]
+INFO: [Synth 8-3491] module 'addRoundKey4' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/addRoundKey4.vhd:12' bound to instance 'grp_addRoundKey4_fu_285' of component 'addRoundKey4' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:585]
+INFO: [Synth 8-638] synthesizing module 'addRoundKey4' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/addRoundKey4.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'addRoundKey4' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/addRoundKey4.vhd:39]
+INFO: [Synth 8-3491] module 'substituteBytes' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes.vhd:12' bound to instance 'grp_substituteBytes_fu_292' of component 'substituteBytes' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:610]
+INFO: [Synth 8-638] synthesizing module 'substituteBytes' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes.vhd:33]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'substituteBytes_seOg' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes_seOg.vhd:147' bound to instance 'sbox_V_U' of component 'substituteBytes_seOg' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes.vhd:192]
+INFO: [Synth 8-638] synthesizing module 'substituteBytes_seOg' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes_seOg.vhd:163]
+INFO: [Synth 8-3491] module 'substituteBytes_seOg_rom' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes_seOg.vhd:12' bound to instance 'substituteBytes_seOg_rom_U' of component 'substituteBytes_seOg_rom' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes_seOg.vhd:178]
+INFO: [Synth 8-638] synthesizing module 'substituteBytes_seOg_rom' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes_seOg.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'substituteBytes_seOg_rom' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes_seOg.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'substituteBytes_seOg' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes_seOg.vhd:163]
+INFO: [Synth 8-256] done synthesizing module 'substituteBytes' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/substituteBytes.vhd:33]
+INFO: [Synth 8-3491] module 'shiftRowLeft' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/shiftRowLeft.vhd:12' bound to instance 'grp_shiftRowLeft_fu_300' of component 'shiftRowLeft' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:629]
+INFO: [Synth 8-638] synthesizing module 'shiftRowLeft' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/shiftRowLeft.vhd:30]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 8 - type: integer 
+	Parameter din4_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'AESEncrypt_TopFundEe' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFundEe.vhd:13' bound to instance 'AESEncrypt_TopFundEe_U20' of component 'AESEncrypt_TopFundEe' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/shiftRowLeft.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'shiftRowLeft' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/shiftRowLeft.vhd:30]
+INFO: [Synth 8-3491] module 'shiftRowRight' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/shiftRowRight.vhd:12' bound to instance 'grp_shiftRowRight_fu_312' of component 'shiftRowRight' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:645]
+INFO: [Synth 8-638] synthesizing module 'shiftRowRight' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/shiftRowRight.vhd:28]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 8 - type: integer 
+	Parameter din3_WIDTH bound to: 8 - type: integer 
+	Parameter din4_WIDTH bound to: 2 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'AESEncrypt_TopFundEe' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFundEe.vhd:13' bound to instance 'AESEncrypt_TopFundEe_U24' of component 'AESEncrypt_TopFundEe' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/shiftRowRight.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'shiftRowRight' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/shiftRowRight.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'aesEncrypt' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:36]
+INFO: [Synth 8-3491] module 'matrix2axi' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/matrix2axi.vhd:12' bound to instance 'grp_matrix2axi_fu_188' of component 'matrix2axi' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction.vhd:787]
+INFO: [Synth 8-638] synthesizing module 'matrix2axi' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/matrix2axi.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'matrix2axi' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/matrix2axi.vhd:38]
+INFO: [Synth 8-3491] module 'axi2matrix' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/axi2matrix.vhd:12' bound to instance 'grp_axi2matrix_fu_207' of component 'axi2matrix' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction.vhd:811]
+INFO: [Synth 8-638] synthesizing module 'axi2matrix' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/axi2matrix.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'axi2matrix' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/axi2matrix.vhd:40]
+INFO: [Synth 8-3491] module 'axi2matrix' declared at 'd:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/axi2matrix.vhd:12' bound to instance 'grp_axi2matrix_fu_226' of component 'axi2matrix' [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction.vhd:837]
+INFO: [Synth 8-256] done synthesizing module 'AESEncrypt_TopFunction' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/AESEncrypt_TopFunction.vhd:67]
+INFO: [Synth 8-256] done synthesizing module 'design_1_AESEncrypt_TopFuncti_0_0' (0#1) [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ip/design_1_AESEncrypt_TopFuncti_0_0/synth/design_1_AESEncrypt_TopFuncti_0_0.vhd:108]
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[15] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[14] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[13] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[12] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[11] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[10] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[9] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[8] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[7] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[6] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[5] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[4] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[3] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[2] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[1] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[0] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[15] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[14] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[13] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[12] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[11] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[10] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[9] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[8] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[7] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[6] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[5] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[4] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[3] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[2] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[1] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[0] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TUSER[0] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TLAST[0] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TID[0] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TDEST[0] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port shiftAmount[3] in module shiftRowLeft is either unconnected or has no load
+WARNING: [Synth 8-7129] Port shiftAmount[2] in module shiftRowLeft is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module substituteBytes_seOg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module keyExpansion5_rcocud is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module keyExpansion5_sbobkb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module mixColumns_gf_mulg8j is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module mixColumns_gf_mulfYi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module aesEncrypt_roundKibs is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module aesEncrypt_expandhbi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module AESEncrypt_TopFunkbM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module AESEncrypt_TopFunjbC is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[31] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[30] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[29] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[28] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[27] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[26] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[25] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[24] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[23] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[22] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[21] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[20] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[19] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[18] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[17] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[16] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[15] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[14] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[13] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[12] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[11] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[10] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[9] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[8] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[6] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[5] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[4] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[3] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WDATA[2] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WSTRB[3] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WSTRB[2] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WSTRB[1] in module AESEncrypt_TopFunction_control_s_axi is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1515.961 ; gain = 597.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1515.961 ; gain = 597.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1515.961 ; gain = 597.363
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 1515.961 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ip/design_1_AESEncrypt_TopFuncti_0_0/constraints/AESEncrypt_TopFunction_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ip/design_1_AESEncrypt_TopFuncti_0_0/constraints/AESEncrypt_TopFunction_ooc.xdc] for cell 'U0'
+Parsing XDC File [D:/FPGA/AES/VIVADO/AES_Update/AES_Update.runs/design_1_AESEncrypt_TopFuncti_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/FPGA/AES/VIVADO/AES_Update/AES_Update.runs/design_1_AESEncrypt_TopFuncti_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1556.008 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+The system cannot find the path specified.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.082 . Memory (MB): peak = 1561.746 ; gain = 5.738
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1561.746 ; gain = 643.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1561.746 ; gain = 643.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  D:/FPGA/AES/VIVADO/AES_Update/AES_Update.runs/design_1_AESEncrypt_TopFuncti_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1561.746 ; gain = 643.148
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'AESEncrypt_TopFunction_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'AESEncrypt_TopFunction_control_s_axi'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_21_reg_748_reg' and it is trimmed from '6' to '4' bits. [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:991]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_23_reg_712_reg' and it is trimmed from '6' to '4' bits. [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:999]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_15_reg_663_reg' and it is trimmed from '6' to '4' bits. [d:/FPGA/AES/VIVADO/AES_Update/AES_Update.gen/sources_1/bd/design_1/ipshared/956a/hdl/vhdl/aesEncrypt.vhd:983]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                              011
+*
+                  wridle |                             0010 |                              000
+                  wrdata |                             0100 |                              001
+                  wrresp |                             1000 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'AESEncrypt_TopFunction_control_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                              110
+*
+                  rdidle |                              010 |                              100
+                  rddata |                              100 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'AESEncrypt_TopFunction_control_s_axi'
+INFO: [Synth 8-3971] The signal "AESEncrypt_TopFunjbC_ram:/ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "AESEncrypt_TopFunkbM_ram:/ram_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1561.746 ; gain = 643.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 13    
+	   2 Input    6 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 10    
+	   2 Input    3 Bit       Adders := 21    
+	   2 Input    2 Bit       Adders := 2     
++---XORs : 
+	   2 Input      8 Bit         XORs := 23    
+	   3 Input      8 Bit         XORs := 14    
+	   2 Input      3 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	              128 Bit    Registers := 6     
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 15    
+	               14 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 161   
+	                6 Bit    Registers := 10    
+	                4 Bit    Registers := 8     
+	                3 Bit    Registers := 37    
+	                2 Bit    Registers := 27    
+	                1 Bit    Registers := 86    
++---RAMs : 
+	               1K Bit	(176 X 8 bit)          RAMs := 1     
+	              128 Bit	(16 X 8 bit)          RAMs := 2     
++---ROMs : 
+	                    ROMs := 11    
++---Muxes : 
+	   2 Input  128 Bit        Muxes := 3     
+	   2 Input   33 Bit        Muxes := 2     
+	   5 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   30 Bit        Muxes := 1     
+	   2 Input   28 Bit        Muxes := 1     
+	   2 Input   26 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 1     
+	   2 Input   23 Bit        Muxes := 1     
+	   2 Input   22 Bit        Muxes := 2     
+	   2 Input   21 Bit        Muxes := 1     
+	   2 Input   19 Bit        Muxes := 1     
+	   2 Input   17 Bit        Muxes := 1     
+	  17 Input   16 Bit        Muxes := 3     
+	   2 Input   16 Bit        Muxes := 6     
+	   2 Input   15 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 1     
+	   3 Input   12 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 3     
+	   2 Input    9 Bit        Muxes := 3     
+	  10 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 60    
+	   9 Input    8 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 3     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 23    
+	  16 Input    4 Bit        Muxes := 3     
+	   8 Input    4 Bit        Muxes := 4     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 10    
+	   2 Input    2 Bit        Muxes := 33    
+	   4 Input    2 Bit        Muxes := 21    
+	   2 Input    1 Bit        Muxes := 120   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[15] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[14] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[13] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[12] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[11] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[10] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[9] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[8] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[7] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[6] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[5] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[4] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[3] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[2] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[1] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TKEEP[0] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[15] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[14] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[13] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[12] in module axi2matrix is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stream_in_key_TSTRB[11] in module axi2matrix is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3971] The signal "U0/matrixText_data_V_U/AESEncrypt_TopFunjbC_ram_U/ram_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "U0/matrixKey_data_V_U/AESEncrypt_TopFunkbM_ram_U/ram_reg" was recognized as a true dual port RAM template.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_wstate_reg[0]) is unused and will be removed from module AESEncrypt_TopFunction_control_s_axi.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_rstate_reg[0]) is unused and will be removed from module AESEncrypt_TopFunction_control_s_axi.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 1561.746 ; gain = 643.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-------------------------+--------------------------------------------+---------------+----------------+
+|Module Name              | RTL Object                                 | Depth x Width | Implemented As | 
++-------------------------+--------------------------------------------+---------------+----------------+
+|keyExpansion5_rcocud_rom | mem                                        | 16x8          | LUT            | 
+|keyExpansion5            | sbox_V_U/keyExpansion5_sbobkb_rom_U/q0_reg | 256x8         | Block RAM      | 
+|keyExpansion5            | p_0_out                                    | 16x8          | LUT            | 
+|substituteBytes          | sbox_V_U/substituteBytes_seOg_rom_U/q0_reg | 256x8         | Block RAM      | 
+|substituteBytes          | sbox_V_U/substituteBytes_seOg_rom_U/q1_reg | 256x8         | Block RAM      | 
++-------------------------+--------------------------------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++-------------------------+--------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name              | RTL Object                                             | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------------+--------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|U0                       | matrixText_data_V_U/AESEncrypt_TopFunjbC_ram_U/ram_reg | 16 x 8(WRITE_FIRST)    | W | R | 16 x 8(WRITE_FIRST)    | W | R | Port A and B     | 1      | 0      | 
+|U0                       | matrixKey_data_V_U/AESEncrypt_TopFunkbM_ram_U/ram_reg  | 16 x 8(NO_CHANGE)      | W |   | 16 x 8(WRITE_FIRST)    | W | R | Port A and B     | 1      | 0      | 
+|U0/grp_aesEncrypt_fu_174 | expandedKey_U/aesEncrypt_expandhbi_ram_U/ram_reg       | 176 x 8(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
++-------------------------+--------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-------------------------+------------------------------------------------------+----------------+----------------------+---------------+
+|Module Name              | RTL Object                                           | Inference      | Size (Depth x Width) | Primitives    | 
++-------------------------+------------------------------------------------------+----------------+----------------------+---------------+
+|U0/grp_aesEncrypt_fu_174 | roundKey_data_V_U/aesEncrypt_roundKibs_ram_U/ram_reg | User Attribute | 16 x 8               | RAM16X1D x 8  | 
++-------------------------+------------------------------------------------------+----------------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1561.746 ; gain = 643.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1574.387 ; gain = 655.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++-------------------------+--------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name              | RTL Object                                             | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------------+--------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|U0                       | matrixText_data_V_U/AESEncrypt_TopFunjbC_ram_U/ram_reg | 16 x 8(WRITE_FIRST)    | W | R | 16 x 8(WRITE_FIRST)    | W | R | Port A and B     | 1      | 0      | 
+|U0                       | matrixKey_data_V_U/AESEncrypt_TopFunkbM_ram_U/ram_reg  | 16 x 8(NO_CHANGE)      | W |   | 16 x 8(WRITE_FIRST)    | W | R | Port A and B     | 1      | 0      | 
+|U0/grp_aesEncrypt_fu_174 | expandedKey_U/aesEncrypt_expandhbi_ram_U/ram_reg       | 176 x 8(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
++-------------------------+--------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++-------------------------+------------------------------------------------------+----------------+----------------------+---------------+
+|Module Name              | RTL Object                                           | Inference      | Size (Depth x Width) | Primitives    | 
++-------------------------+------------------------------------------------------+----------------+----------------------+---------------+
+|U0/grp_aesEncrypt_fu_174 | roundKey_data_V_U/aesEncrypt_roundKibs_ram_U/ram_reg | User Attribute | 16 x 8               | RAM16X1D x 8  | 
++-------------------------+------------------------------------------------------+----------------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance U0/matrixText_data_V_U/AESEncrypt_TopFunjbC_ram_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/matrixText_data_V_U/AESEncrypt_TopFunjbC_ram_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/matrixKey_data_V_U/AESEncrypt_TopFunkbM_ram_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/expandedKey_U/aesEncrypt_expandhbi_ram_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_mixColumns_fu_263/gf_mul2_table_V_U/mixColumns_gf_mulfYi_rom_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_mixColumns_fu_263/gf_mul2_table_V_U/mixColumns_gf_mulfYi_rom_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_mixColumns_fu_263/gf_mul2_table_V_U/mixColumns_gf_mulfYi_rom_U/q2_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_mixColumns_fu_263/gf_mul2_table_V_U/mixColumns_gf_mulfYi_rom_U/q2_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_mixColumns_fu_263/gf_mul3_table_V_U/mixColumns_gf_mulg8j_rom_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_mixColumns_fu_263/gf_mul3_table_V_U/mixColumns_gf_mulg8j_rom_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_mixColumns_fu_263/gf_mul3_table_V_U/mixColumns_gf_mulg8j_rom_U/q2_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_mixColumns_fu_263/gf_mul3_table_V_U/mixColumns_gf_mulg8j_rom_U/q2_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_keyExpansion5_fu_273/sbox_V_U/keyExpansion5_sbobkb_rom_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_keyExpansion5_fu_273/sbox_V_U/keyExpansion5_sbobkb_rom_U/q0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/grp_aesEncrypt_fu_174/grp_substituteBytes_fu_292/sbox_V_U/substituteBytes_seOg_rom_U/q1_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1574.387 ; gain = 655.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1574.387 ; gain = 655.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1574.387 ; gain = 655.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1574.387 ; gain = 655.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1574.387 ; gain = 655.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1574.387 ; gain = 655.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1574.387 ; gain = 655.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |     8|
+|2     |LUT1     |    22|
+|3     |LUT2     |    95|
+|4     |LUT3     |   561|
+|5     |LUT4     |   297|
+|6     |LUT5     |   234|
+|7     |LUT6     |   512|
+|8     |MUXF7    |     4|
+|9     |RAM16X1D |     8|
+|10    |RAMB18E1 |     9|
+|16    |FDRE     |  2235|
+|17    |FDSE     |    13|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1574.387 ; gain = 655.789
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 76 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:37 . Memory (MB): peak = 1574.387 ; gain = 610.004
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 1574.387 ; gain = 655.789
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1577.117 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1580.789 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 8 instances
+
+The system cannot find the path specified.
+Synth Design complete | Checksum: 74296fa7
+INFO: [Common 17-83] Releasing license: Synthesis
+149 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:53 . Memory (MB): peak = 1580.789 ; gain = 1079.891
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1580.789 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/FPGA/AES/VIVADO/AES_Update/AES_Update.runs/design_1_AESEncrypt_TopFuncti_0_0_synth_1/design_1_AESEncrypt_TopFuncti_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_AESEncrypt_TopFuncti_0_0, cache-ID = 8747d96781840d92
+INFO: [Coretcl 2-1174] Renamed 30 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1580.789 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/FPGA/AES/VIVADO/AES_Update/AES_Update.runs/design_1_AESEncrypt_TopFuncti_0_0_synth_1/design_1_AESEncrypt_TopFuncti_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_AESEncrypt_TopFuncti_0_0_utilization_synth.rpt -pb design_1_AESEncrypt_TopFuncti_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 14 16:49:06 2018...

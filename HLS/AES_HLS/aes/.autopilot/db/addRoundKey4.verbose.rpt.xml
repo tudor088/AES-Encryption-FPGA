@@ -1,0 +1,158 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'addRoundKey4'" level="0">
+<item name = "Date">Tue Jan 14 16:43:26 2025
+</item>
+<item name = "Version">2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)</item>
+<item name = "Project">AES_HLS</item>
+<item name = "Solution">aes</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 5.63, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">15, 15, 15, 15, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 112</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, -, -</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 425</column>
+<column name="Register">-, -, 128, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, 1</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="grp_fu_346_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="grp_fu_353_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_28_fu_360_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_29_fu_366_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_30_fu_372_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_31_fu_378_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_32_fu_384_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_33_fu_390_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_34_fu_396_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_35_fu_402_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_36_fu_408_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_37_fu_414_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_38_fu_420_p2">xor, 0, 0, 8, 8, 8</column>
+<column name="op2_V_read_assign_39_fu_426_p2">xor, 0, 0, 8, 8, 8</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">85, 17, 1, 17</column>
+<column name="roundKey_data_V_address0">44, 9, 4, 36</column>
+<column name="roundKey_data_V_address1">44, 9, 4, 36</column>
+<column name="state_data_V_address0">85, 17, 4, 68</column>
+<column name="state_data_V_address1">85, 17, 4, 68</column>
+<column name="state_data_V_d0">41, 8, 8, 64</column>
+<column name="state_data_V_d1">41, 8, 8, 64</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">16, 0, 16, 0</column>
+<column name="reg_338">8, 0, 8, 0</column>
+<column name="reg_342">8, 0, 8, 0</column>
+<column name="state_data_V_load_47_reg_462">8, 0, 8, 0</column>
+<column name="state_data_V_load_48_reg_467">8, 0, 8, 0</column>
+<column name="state_data_V_load_49_reg_482">8, 0, 8, 0</column>
+<column name="state_data_V_load_50_reg_487">8, 0, 8, 0</column>
+<column name="state_data_V_load_51_reg_502">8, 0, 8, 0</column>
+<column name="state_data_V_load_52_reg_507">8, 0, 8, 0</column>
+<column name="state_data_V_load_53_reg_522">8, 0, 8, 0</column>
+<column name="state_data_V_load_54_reg_527">8, 0, 8, 0</column>
+<column name="state_data_V_load_55_reg_542">8, 0, 8, 0</column>
+<column name="state_data_V_load_56_reg_547">8, 0, 8, 0</column>
+<column name="state_data_V_load_57_reg_572">8, 0, 8, 0</column>
+<column name="state_data_V_load_58_reg_577">8, 0, 8, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, addRoundKey4, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, addRoundKey4, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, addRoundKey4, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, addRoundKey4, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, addRoundKey4, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, addRoundKey4, return value</column>
+<column name="state_data_V_address0">out, 4, ap_memory, state_data_V, array</column>
+<column name="state_data_V_ce0">out, 1, ap_memory, state_data_V, array</column>
+<column name="state_data_V_we0">out, 1, ap_memory, state_data_V, array</column>
+<column name="state_data_V_d0">out, 8, ap_memory, state_data_V, array</column>
+<column name="state_data_V_q0">in, 8, ap_memory, state_data_V, array</column>
+<column name="state_data_V_address1">out, 4, ap_memory, state_data_V, array</column>
+<column name="state_data_V_ce1">out, 1, ap_memory, state_data_V, array</column>
+<column name="state_data_V_we1">out, 1, ap_memory, state_data_V, array</column>
+<column name="state_data_V_d1">out, 8, ap_memory, state_data_V, array</column>
+<column name="state_data_V_q1">in, 8, ap_memory, state_data_V, array</column>
+<column name="roundKey_data_V_address0">out, 4, ap_memory, roundKey_data_V, array</column>
+<column name="roundKey_data_V_ce0">out, 1, ap_memory, roundKey_data_V, array</column>
+<column name="roundKey_data_V_q0">in, 8, ap_memory, roundKey_data_V, array</column>
+<column name="roundKey_data_V_address1">out, 4, ap_memory, roundKey_data_V, array</column>
+<column name="roundKey_data_V_ce1">out, 1, ap_memory, roundKey_data_V, array</column>
+<column name="roundKey_data_V_q1">in, 8, ap_memory, roundKey_data_V, array</column>
+</table>
+</item>
+</section>
+</profile>

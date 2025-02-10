@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog>
+        <logs message="ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source D:/FPGA/AES/HLS/AES_HLS/aes/cosim.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main D:/FPGA/AES/HLS/AES_HLS/aes/cosim.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="AES_HLS" solutionName="aes" date="2018-01-14T16:45:09.998+0200"/>
+        <logs message="ERROR: [COSIM 212-330] Aborting co-simulation: top function 'AESEncrypt_TopFunction' is not invoked in the test bench." projectName="AES_HLS" solutionName="aes" date="2018-01-14T16:45:09.915+0200"/>
+        <logs message="ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source D:/FPGA/AES/HLS/AES_HLS/aes/cosim.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main D:/FPGA/AES/HLS/AES_HLS/aes/cosim.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="AES_HLS" solutionName="aes" date="2025-01-14T16:44:31.526+0200"/>
+        <logs message="ERROR: [COSIM 212-330] Aborting co-simulation: top function 'AESEncrypt_TopFunction' is not invoked in the test bench." projectName="AES_HLS" solutionName="aes" date="2025-01-14T16:44:31.425+0200"/>
+      </simLog>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AESMatrix::shiftRowLeft' to 'shiftRowLeft' (AES_HLS/aes_implementation.cpp:143)" projectName="AES_HLS" solutionName="aes" date="2025-01-14T16:43:23.522+0200" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AESMatrix::shiftRowRight' to 'shiftRowRight' (AES_HLS/aes_implementation.cpp:154)" projectName="AES_HLS" solutionName="aes" date="2025-01-14T16:43:23.136+0200" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] AES_HLS/aes_implementation.cpp:189: variable-indexed range selection may cause suboptimal QoR." projectName="AES_HLS" solutionName="aes" date="2025-01-14T16:43:21.858+0200" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

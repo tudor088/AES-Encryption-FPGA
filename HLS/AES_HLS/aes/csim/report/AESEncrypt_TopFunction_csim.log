@@ -1,0 +1,32 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../aes_tb.cpp in debug mode
+   Compiling ../../../aes_implementation.cpp in debug mode
+   Generating csim.exe
+0xacINITIAL TEXT (ThisIsSampleText) - in HEX  0x54686973497353616D706C6554657874
+54 49 6d 54 
+68 73 70 65 
+69 53 6c 78 
+73 61 65 74 
+
+MASTER KEY (ThisIsMasterKeyX) - in HEX  0x5468697349734D61737465724B657958
+54 49 73 4b 
+68 73 74 65 
+69 4d 65 79 
+73 61 72 58 
+
+Expanded Key:
+54 49 73 4b 18 51 22 69 7f 2e c 65 3c 12 1e 7b fe ec f2 89 6d 81 73 fa b3 32 41 bb 21 13 52 e9 30 23 71 98 2 21 50 c8 86 a7 f7 3f 
+68 73 74 65 de ad d9 bc de 73 aa 16 df ac 6 10 fb 57 51 41 4b 1c 4d c 22 3e 73 7f 9e a0 d3 ac 93 33 e0 4c a1 92 72 3e 4e dc ae 90 
+69 4d 65 79 3 4e 2b 52 3e 70 5b 9 84 f4 af a6 1 f5 5a fc b7 42 18 e4 c6 84 9c 78 93 17 8b f3 ce d9 52 a1 4b 92 c0 61 49 db 1b 7a 
+73 61 72 58 c0 a1 d3 8b 39 98 4b c0 74 ec a7 67 55 b9 1e 79 f2 4b 55 2c df 94 c1 ed 35 a1 60 8d 2b 8a ea 67 6d e7 d 6a 85 62 6f 5 
+
+ENCODED RESULT
+c8 60 d2 ce 
+c0 7c ad cf 
+26 ec c ef 
+87 cf 4f f3 
+
+0xC8C02687607CECCFD2AD0C4FCECFEFF3
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

@@ -1,0 +1,5 @@
+   Build using "D:/Programs/Vivado2018/Vivado/2018.1/msys/bin/g++.exe"
+   Compiling aes_implementation.cpp_pre.cpp.tb.cpp
+   Compiling aes_tb.cpp_pre.cpp.tb.cpp
+   Compiling apatb_AESEncrypt_TopFunction.cpp
+   Generating cosim.tv.exe

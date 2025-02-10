@@ -1,0 +1,10 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "D:/Programs/Vivado2018/Vivado/2018.1/msys/bin/g++.exe"
+   Compiling aes_implementation.cpp_pre.cpp.tb.cpp
+   Compiling aes_tb.cpp_pre.cpp.tb.cpp
+   Compiling apatb_AESEncrypt_TopFunction.cpp
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+ERROR: [COSIM-330] Aborting co-simulation: top function 'AESEncrypt_TopFunction' is not invoked in the test bench.
+ERROR: [COSIM-4] *** C/RTL co-simulation finished: FAIL ***

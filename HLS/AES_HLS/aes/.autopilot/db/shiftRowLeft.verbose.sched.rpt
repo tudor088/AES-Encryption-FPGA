@@ -1,0 +1,199 @@
+
+
+================================================================
+== Vivado HLS Report for 'shiftRowLeft'
+================================================================
+* Date:           Tue Jan 14 16:43:24 2025
+
+* Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
+* Project:        AES_HLS
+* Solution:       aes
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      4.28|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   14|   14|   14|   14|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    8|    8|         2|          -|          -|     4|    no    |
+        |- Loop 2  |    4|    4|         1|          -|          -|     4|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond8)
+	4  / (exitcond8)
+3 --> 
+	2  / true
+4 --> 
+	4  / (!exitcond)
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tempRow_3_V = alloca i8"
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%tempRow_3_V_5 = alloca i8"
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%tempRow_3_V_6 = alloca i8"
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tempRow_3_V_7 = alloca i8"
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%shiftAmount_read = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %shiftAmount)"
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%row_read = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %row)"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%tmp = call i6 @_ssdm_op_BitConcatenate.i6.i4.i2(i4 %row_read, i2 0)"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp_7 = trunc i4 %shiftAmount_read to i2" [AES_HLS/aes_implementation.cpp:147]
+ST_1 : Operation 13 [1/1] (1.76ns)   --->   "br label %branch0" [AES_HLS/aes_implementation.cpp:146]
+
+ <State 2> : 3.89ns
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%col = phi i3 [ 0, %0 ], [ %col_4, %branch0.backedge ]"
+ST_2 : Operation 15 [1/1] (1.13ns)   --->   "%exitcond8 = icmp eq i3 %col, -4" [AES_HLS/aes_implementation.cpp:146]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"
+ST_2 : Operation 17 [1/1] (1.65ns)   --->   "%col_4 = add i3 %col, 1" [AES_HLS/aes_implementation.cpp:146]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "br i1 %exitcond8, label %.preheader.preheader, label %1" [AES_HLS/aes_implementation.cpp:146]
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_10 = trunc i3 %col to i2" [AES_HLS/aes_implementation.cpp:147]
+ST_2 : Operation 20 [1/1] (1.56ns)   --->   "%tmp_cast = add i2 %tmp_7, %tmp_10" [AES_HLS/aes_implementation.cpp:147]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_5 = call i6 @_ssdm_op_BitConcatenate.i6.i4.i2(i4 %row_read, i2 %tmp_cast)" [AES_HLS/aes_implementation.cpp:147]
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_6 = zext i6 %tmp_5 to i64" [AES_HLS/aes_implementation.cpp:147]
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%AESMatrix_data_V_add = getelementptr [16 x i8]* %AESMatrix_data_V, i64 0, i64 %tmp_6" [AES_HLS/aes_implementation.cpp:147]
+ST_2 : Operation 24 [2/2] (2.32ns)   --->   "%tempRow_0_V = load i8* %AESMatrix_data_V_add, align 1" [AES_HLS/aes_implementation.cpp:147]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 25 [1/1] (1.76ns)   --->   "br label %.preheader" [AES_HLS/aes_implementation.cpp:149]
+
+ <State 3> : 2.32ns
+ST_3 : Operation 26 [1/2] (2.32ns)   --->   "%tempRow_0_V = load i8* %AESMatrix_data_V_add, align 1" [AES_HLS/aes_implementation.cpp:147]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 27 [1/1] (1.30ns)   --->   "switch i2 %tmp_10, label %branch3 [
+    i2 0, label %.branch0.backedge_crit_edge
+    i2 1, label %branch1
+    i2 -2, label %branch2
+  ]" [AES_HLS/aes_implementation.cpp:147]
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "store i8 %tempRow_0_V, i8* %tempRow_3_V_6" [AES_HLS/aes_implementation.cpp:147]
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "br label %branch0.backedge" [AES_HLS/aes_implementation.cpp:147]
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "store i8 %tempRow_0_V, i8* %tempRow_3_V_5" [AES_HLS/aes_implementation.cpp:147]
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "br label %branch0.backedge" [AES_HLS/aes_implementation.cpp:147]
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "store i8 %tempRow_0_V, i8* %tempRow_3_V" [AES_HLS/aes_implementation.cpp:147]
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "br label %branch0.backedge" [AES_HLS/aes_implementation.cpp:147]
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "store i8 %tempRow_0_V, i8* %tempRow_3_V_7" [AES_HLS/aes_implementation.cpp:147]
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "br label %branch0.backedge" [AES_HLS/aes_implementation.cpp:147]
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "br label %branch0"
+
+ <State 4> : 4.28ns
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%col1 = phi i3 [ %col_3, %2 ], [ 0, %.preheader.preheader ]"
+ST_4 : Operation 38 [1/1] (1.13ns)   --->   "%exitcond = icmp eq i3 %col1, -4" [AES_HLS/aes_implementation.cpp:149]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"
+ST_4 : Operation 40 [1/1] (1.65ns)   --->   "%col_3 = add i3 %col1, 1" [AES_HLS/aes_implementation.cpp:149]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %3, label %2" [AES_HLS/aes_implementation.cpp:149]
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%tempRow_3_V_load = load i8* %tempRow_3_V"
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%tempRow_3_V_5_load = load i8* %tempRow_3_V_5"
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%tempRow_3_V_6_load = load i8* %tempRow_3_V_6"
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%tempRow_3_V_7_load = load i8* %tempRow_3_V_7"
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_7_cast = zext i3 %col1 to i6" [AES_HLS/aes_implementation.cpp:150]
+ST_4 : Operation 47 [1/1] (1.82ns)   --->   "%tmp_8 = add i6 %tmp, %tmp_7_cast" [AES_HLS/aes_implementation.cpp:150]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_8_cast = zext i6 %tmp_8 to i64" [AES_HLS/aes_implementation.cpp:150]
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%AESMatrix_data_V_add_2 = getelementptr [16 x i8]* %AESMatrix_data_V, i64 0, i64 %tmp_8_cast" [AES_HLS/aes_implementation.cpp:150]
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_11 = trunc i3 %col1 to i2" [AES_HLS/aes_implementation.cpp:149]
+ST_4 : Operation 51 [1/1] (1.95ns)   --->   "%tmp_9 = call i8 @_ssdm_op_Mux.ap_auto.4i8.i2(i8 %tempRow_3_V_load, i8 %tempRow_3_V_5_load, i8 %tempRow_3_V_6_load, i8 %tempRow_3_V_7_load, i2 %tmp_11)" [AES_HLS/aes_implementation.cpp:149]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 52 [1/1] (2.32ns)   --->   "store i8 %tmp_9, i8* %AESMatrix_data_V_add_2, align 1" [AES_HLS/aes_implementation.cpp:150]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "br label %.preheader" [AES_HLS/aes_implementation.cpp:149]
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "ret void" [AES_HLS/aes_implementation.cpp:152]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('col') with incoming values : ('col', AES_HLS/aes_implementation.cpp:146) [14]  (1.77 ns)
+
+ <State 2>: 3.89ns
+The critical path consists of the following:
+	'phi' operation ('col') with incoming values : ('col', AES_HLS/aes_implementation.cpp:146) [14]  (0 ns)
+	'add' operation ('tmp_cast', AES_HLS/aes_implementation.cpp:147) [21]  (1.56 ns)
+	'getelementptr' operation ('AESMatrix_data_V_add', AES_HLS/aes_implementation.cpp:147) [24]  (0 ns)
+	'load' operation ('tempRow[0].V', AES_HLS/aes_implementation.cpp:147) on array 'AESMatrix_data_V' [25]  (2.32 ns)
+
+ <State 3>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('tempRow[0].V', AES_HLS/aes_implementation.cpp:147) on array 'AESMatrix_data_V' [25]  (2.32 ns)
+	'store' operation (AES_HLS/aes_implementation.cpp:147) of variable 'tempRow[0].V', AES_HLS/aes_implementation.cpp:147 on local variable 'tempRow[3].V' [34]  (0 ns)
+
+ <State 4>: 4.28ns
+The critical path consists of the following:
+	'phi' operation ('col') with incoming values : ('col', AES_HLS/aes_implementation.cpp:149) [44]  (0 ns)
+	'mux' operation ('tmp_9', AES_HLS/aes_implementation.cpp:149) [59]  (1.96 ns)
+	'store' operation (AES_HLS/aes_implementation.cpp:150) of variable 'tmp_9', AES_HLS/aes_implementation.cpp:149 on array 'AESMatrix_data_V' [60]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

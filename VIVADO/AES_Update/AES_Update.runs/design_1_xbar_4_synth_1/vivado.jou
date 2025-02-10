@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Jan 14 15:55:14 2025
+# Process ID: 41740
+# Current directory: D:/FPGA/AES/VIVADO/AES_Update/AES_Update.runs/design_1_xbar_4_synth_1
+# Command line: vivado.exe -log design_1_xbar_4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_xbar_4.tcl
+# Log file: D:/FPGA/AES/VIVADO/AES_Update/AES_Update.runs/design_1_xbar_4_synth_1/design_1_xbar_4.vds
+# Journal file: D:/FPGA/AES/VIVADO/AES_Update/AES_Update.runs/design_1_xbar_4_synth_1\vivado.jou
+# Running On: TudorROG, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 33567 MB
+#-----------------------------------------------------------
+source design_1_xbar_4.tcl -notrace

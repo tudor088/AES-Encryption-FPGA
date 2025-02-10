@@ -1,0 +1,148 @@
+
+
+================================================================
+== Vivado HLS Report for 'substituteBytes'
+================================================================
+* Date:           Tue Jan 14 16:43:26 2025
+
+* Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
+* Project:        AES_HLS
+* Solution:       aes
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      5.58|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   15|   15|   15|   15|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        1|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|    343|
+|Register         |        -|      -|     112|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        1|      0|     112|    343|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |    ~0   |      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +----------+----------------------+---------+---+----+------+-----+------+-------------+
+    |  Memory  |        Module        | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +----------+----------------------+---------+---+----+------+-----+------+-------------+
+    |sbox_V_U  |substituteBytes_seOg  |        1|  0|   0|   256|    8|     1|         2048|
+    +----------+----------------------+---------+---+----+------+-----+------+-------------+
+    |Total     |                      |        1|  0|   0|   256|    8|     1|         2048|
+    +----------+----------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-----------------------+----+-----------+-----+-----------+
+    |          Name         | LUT| Input Size| Bits| Total Bits|
+    +-----------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm              |  85|         17|    1|         17|
+    |sbox_V_address0        |  44|          9|    8|         72|
+    |sbox_V_address1        |  44|          9|    8|         72|
+    |state_data_V_address0  |  85|         17|    4|         68|
+    |state_data_V_address1  |  85|         17|    4|         68|
+    +-----------------------+----+-----------+-----+-----------+
+    |Total                  | 343|         69|   25|        297|
+    +-----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------+----+----+-----+-----------+
+    |             Name             | FF | LUT| Bits| Const Bits|
+    +------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                     |  16|   0|   16|          0|
+    |reg_324                       |   8|   0|    8|          0|
+    |reg_328                       |   8|   0|    8|          0|
+    |reg_332                       |   8|   0|    8|          0|
+    |reg_336                       |   8|   0|    8|          0|
+    |state_data_V_load_10_reg_512  |   8|   0|    8|          0|
+    |state_data_V_load_11_reg_517  |   8|   0|    8|          0|
+    |state_data_V_load_4_reg_452   |   8|   0|    8|          0|
+    |state_data_V_load_5_reg_457   |   8|   0|    8|          0|
+    |state_data_V_load_6_reg_472   |   8|   0|    8|          0|
+    |state_data_V_load_7_reg_477   |   8|   0|    8|          0|
+    |state_data_V_load_8_reg_492   |   8|   0|    8|          0|
+    |state_data_V_load_9_reg_497   |   8|   0|    8|          0|
+    +------------------------------+----+----+-----+-----------+
+    |Total                         | 112|   0|  112|          0|
+    +------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+-----------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++-----------------------+-----+-----+------------+-----------------+--------------+
+|ap_clk                 |  in |    1| ap_ctrl_hs | substituteBytes | return value |
+|ap_rst                 |  in |    1| ap_ctrl_hs | substituteBytes | return value |
+|ap_start               |  in |    1| ap_ctrl_hs | substituteBytes | return value |
+|ap_done                | out |    1| ap_ctrl_hs | substituteBytes | return value |
+|ap_idle                | out |    1| ap_ctrl_hs | substituteBytes | return value |
+|ap_ready               | out |    1| ap_ctrl_hs | substituteBytes | return value |
+|state_data_V_address0  | out |    4|  ap_memory |   state_data_V  |     array    |
+|state_data_V_ce0       | out |    1|  ap_memory |   state_data_V  |     array    |
+|state_data_V_we0       | out |    1|  ap_memory |   state_data_V  |     array    |
+|state_data_V_d0        | out |    8|  ap_memory |   state_data_V  |     array    |
+|state_data_V_q0        |  in |    8|  ap_memory |   state_data_V  |     array    |
+|state_data_V_address1  | out |    4|  ap_memory |   state_data_V  |     array    |
+|state_data_V_ce1       | out |    1|  ap_memory |   state_data_V  |     array    |
+|state_data_V_we1       | out |    1|  ap_memory |   state_data_V  |     array    |
+|state_data_V_d1        | out |    8|  ap_memory |   state_data_V  |     array    |
+|state_data_V_q1        |  in |    8|  ap_memory |   state_data_V  |     array    |
++-----------------------+-----+-----+------------+-----------------+--------------+
+

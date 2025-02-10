@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sun Jan 14 16:45:39 2018
+# Process ID: 15960
+# Current directory: D:/FPGA/AES/HLS/AES_HLS/aes/impl/ip
+# Command line: vivado.exe -notrace -mode batch -source run_ippack.tcl
+# Log file: D:/FPGA/AES/HLS/AES_HLS/aes/impl/ip/vivado.log
+# Journal file: D:/FPGA/AES/HLS/AES_HLS/aes/impl/ip\vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="aes.h" path="D:\FPGA\AES\HLS\AES_HLS\aes.h"/>
+    <originFiles name="aes_implementation.cpp" path="D:\FPGA\AES\HLS\AES_HLS\aes_implementation.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="aes_tb.cpp" path="D:\FPGA\AES\HLS\AES_HLS\aes_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Tudor" Host="TUDORROG" Pid="35484" HostCore="16" HostMemory="033567961088">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Tudor" Host="TUDORROG" Pid="15816" HostCore="16" HostMemory="033567961088">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Tudor" Host="TUDORROG" Pid="2212" HostCore="16" HostMemory="033567961088">
+    </Process>
+</ProcessHandle>

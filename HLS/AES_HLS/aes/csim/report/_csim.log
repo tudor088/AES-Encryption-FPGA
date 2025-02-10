@@ -1,0 +1,17 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../aes_tb.cpp in debug mode
+   Generating csim.exe
+0 44 88 cc 
+11 55 99 dd 
+22 66 aa ee 
+33 77 bb ff 
+
+11 55 99 dd 
+aa
+0 44 69 cc 
+11 55 69 dd 
+22 66 69 ee 
+33 77 69 ff 
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

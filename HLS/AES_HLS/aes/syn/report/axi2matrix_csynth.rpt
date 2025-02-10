@@ -1,0 +1,158 @@
+
+
+================================================================
+== Vivado HLS Report for 'axi2matrix'
+================================================================
+* Date:           Tue Jan 14 16:43:26 2025
+
+* Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
+* Project:        AES_HLS
+* Solution:       aes
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      2.32|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    7|    7|    7|    7|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|      2|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    229|
+|Register         |        -|      -|     120|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     120|    231|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+-------+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |ap_block_state1  |    or    |      0|  0|   2|           1|           1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |Total            |          |      0|  0|   2|           1|           1|
+    +-----------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------+----+-----------+-----+-----------+
+    |            Name           | LUT| Input Size| Bits| Total Bits|
+    +---------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                  |  44|          9|    1|          9|
+    |state_data_V_address0      |  44|          9|    4|         36|
+    |state_data_V_address1      |  44|          9|    4|         36|
+    |state_data_V_d0            |  44|          9|    8|         72|
+    |state_data_V_d1            |  44|          9|    8|         72|
+    |stream_in_key_TDATA_blk_n  |   9|          2|    1|          2|
+    +---------------------------+----+-----------+-----+-----------+
+    |Total                      | 229|         47|   26|        227|
+    +---------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------+---+----+-----+-----------+
+    |             Name             | FF| LUT| Bits| Const Bits|
+    +------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                     |  8|   0|    8|          0|
+    |op2_V_read_assign_15_reg_451  |  8|   0|    8|          0|
+    |op2_V_read_assign_16_reg_456  |  8|   0|    8|          0|
+    |op2_V_read_assign_17_reg_461  |  8|   0|    8|          0|
+    |op2_V_read_assign_18_reg_466  |  8|   0|    8|          0|
+    |op2_V_read_assign_19_reg_471  |  8|   0|    8|          0|
+    |op2_V_read_assign_20_reg_476  |  8|   0|    8|          0|
+    |op2_V_read_assign_21_reg_481  |  8|   0|    8|          0|
+    |op2_V_read_assign_22_reg_486  |  8|   0|    8|          0|
+    |op2_V_read_assign_23_reg_491  |  8|   0|    8|          0|
+    |op2_V_read_assign_24_reg_496  |  8|   0|    8|          0|
+    |op2_V_read_assign_25_reg_501  |  8|   0|    8|          0|
+    |op2_V_read_assign_26_reg_506  |  8|   0|    8|          0|
+    |op2_V_read_assign_27_reg_511  |  8|   0|    8|          0|
+    |tmp_reg_516                   |  8|   0|    8|          0|
+    +------------------------------+---+----+-----+-----------+
+    |Total                         |120|   0|  120|          0|
+    +------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |    Source Object   |    C Type    |
++-----------------------+-----+-----+------------+--------------------+--------------+
+|ap_clk                 |  in |    1| ap_ctrl_hs |     axi2matrix     | return value |
+|ap_rst                 |  in |    1| ap_ctrl_hs |     axi2matrix     | return value |
+|ap_start               |  in |    1| ap_ctrl_hs |     axi2matrix     | return value |
+|ap_done                | out |    1| ap_ctrl_hs |     axi2matrix     | return value |
+|ap_idle                | out |    1| ap_ctrl_hs |     axi2matrix     | return value |
+|ap_ready               | out |    1| ap_ctrl_hs |     axi2matrix     | return value |
+|stream_in_key_TDATA    |  in |  128|    axis    | stream_in_V_data_V |    pointer   |
+|stream_in_key_TVALID   |  in |    1|    axis    | stream_in_V_data_V |    pointer   |
+|stream_in_key_TREADY   | out |    1|    axis    | stream_in_V_dest_V |    pointer   |
+|stream_in_key_TDEST    |  in |    1|    axis    | stream_in_V_dest_V |    pointer   |
+|stream_in_key_TKEEP    |  in |   16|    axis    | stream_in_V_keep_V |    pointer   |
+|stream_in_key_TSTRB    |  in |   16|    axis    | stream_in_V_strb_V |    pointer   |
+|stream_in_key_TUSER    |  in |    1|    axis    | stream_in_V_user_V |    pointer   |
+|stream_in_key_TLAST    |  in |    1|    axis    | stream_in_V_last_V |    pointer   |
+|stream_in_key_TID      |  in |    1|    axis    |  stream_in_V_id_V  |    pointer   |
+|state_data_V_address0  | out |    4|  ap_memory |    state_data_V    |     array    |
+|state_data_V_ce0       | out |    1|  ap_memory |    state_data_V    |     array    |
+|state_data_V_we0       | out |    1|  ap_memory |    state_data_V    |     array    |
+|state_data_V_d0        | out |    8|  ap_memory |    state_data_V    |     array    |
+|state_data_V_address1  | out |    4|  ap_memory |    state_data_V    |     array    |
+|state_data_V_ce1       | out |    1|  ap_memory |    state_data_V    |     array    |
+|state_data_V_we1       | out |    1|  ap_memory |    state_data_V    |     array    |
+|state_data_V_d1        | out |    8|  ap_memory |    state_data_V    |     array    |
++-----------------------+-----+-----+------------+--------------------+--------------+
+

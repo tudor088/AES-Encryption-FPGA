@@ -1,0 +1,271 @@
+/******************************************************************************
+* Copyright (C) 2023 Advanced Micro Devices, Inc.
+* All Rights Reserved.
+* SPDX-License-Identifier: MIT
+******************************************************************************/
+/*
+ * dma_transfer.c: DMA Transfer Application for Zynq-based System
+ *
+ * This application initializes three AXI DMA channels to interface with a custom IP:
+ * - DMA_TX_Text: Transmits data to `stream_in_text`
+ * - DMA_TX_Key: Transmits data to `stream_in_key`
+ * - DMA_RX_Output: Receives data from `stream_out`
+ *
+ * The received data is then displayed on the terminal.
+ *
+ * ------------------------------------------------
+ * | UART TYPE   BAUD RATE                        |
+ * ------------------------------------------------
+ *   uartns550   9600
+ *   uartlite    Configurable only in HW design
+ *   ps7_uart    115200 (configured by bootrom/bsp)
+ */
+
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+
+#include "xparameters.h"
+#include "xaxidma.h"
+#include "xil_cache.h"
+#include "stdlib.h"
+#include "string.h"
+
+/************************** Constant Definitions *****************************/
+
+/* DMA Device IDs as defined in xparameters.h */
+#define DMA_TEXT      XPAR_AXIDMA_0_DEVICE_ID
+#define DMA_KEY       XPAR_AXIDMA_1_DEVICE_ID
+#define DMA_OUTPUT    XPAR_AXIDMA_2_DEVICE_ID
+
+/* Buffer sizes */
+#define BUFFER_SIZE_BYTES  16  // 128 bits = 16 bytes
+#define BUFFER_SIZE_WORDS  (BUFFER_SIZE_BYTES / 4)  // 4 words (32 bits each)
+
+/**************************** Type Definitions *******************************/
+
+/* DMA Instance Definitions */
+XAxiDma dma_text;
+XAxiDma dma_key;
+XAxiDma dma_output;
+
+/************************** Function Prototypes ******************************/
+
+/**
+ * Initialize an AXI DMA instance.
+ *
+ * @param dma        Pointer to the AXI DMA instance.
+ * @param device_id  Device ID of the AXI DMA.
+ *
+ * @return XST_SUCCESS on success, XST_FAILURE otherwise.
+ */
+int init_dma(XAxiDma *dma, u16 device_id);
+
+/************************** Function Definitions ****************************/
+
+/**
+ * Initialize an AXI DMA instance.
+ */
+int init_dma(XAxiDma *dma, u16 device_id) {
+    XAxiDma_Config *cfg;
+    int status;
+
+    /* Lookup the DMA configuration */
+    cfg = XAxiDma_LookupConfig(device_id);
+    if (!cfg) {
+        xil_printf("No configuration found for DMA %d\r\n", device_id);
+        return XST_FAILURE;
+    }
+
+    /* Initialize the DMA */
+    status = XAxiDma_CfgInitialize(dma, cfg);
+    if (status != XST_SUCCESS) {
+        xil_printf("Initialization failed for DMA %d\r\n", device_id);
+        return XST_FAILURE;
+    }
+
+    /* Ensure DMA is in Simple mode */
+    if (XAxiDma_HasSg(dma)) {
+        xil_printf("DMA %d is in Scatter-Gather mode. Expected Simple mode.\r\n", device_id);
+        return XST_FAILURE;
+    }
+
+    /* Disable interrupts */
+    XAxiDma_IntrDisable(dma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+    XAxiDma_IntrDisable(dma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+
+    return XST_SUCCESS;
+}
+
+/**
+ * Main function.
+ */
+int main(){
+    int status;
+    int timeout;
+
+    /* Statically allocated, cache-aligned DMA buffers */
+    u32 dma0_mm2s_buffer[BUFFER_SIZE_WORDS] __attribute__((aligned(32)));
+    u32 dma1_mm2s_buffer[BUFFER_SIZE_WORDS] __attribute__((aligned(32)));
+    u32 dma2_s2mm_buffer[BUFFER_SIZE_WORDS] __attribute__((aligned(32)));
+
+    /* Initialize the platform (e.g., UART) */
+    init_platform();
+    xil_printf("Hello, DMA Transfer Application!\r\n");
+
+    /* Initialize DMA Text Channel */
+    if (init_dma(&dma_text, DMA_TEXT) != XST_SUCCESS) {
+        xil_printf("DMA_Text initialization failed.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    } else {
+        xil_printf("DMA_Text successfully initialized.\r\n");
+    }
+
+    /* Initialize DMA Key Channel */
+    if (init_dma(&dma_key, DMA_KEY) != XST_SUCCESS) {
+        xil_printf("DMA_Key initialization failed.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    } else {
+        xil_printf("DMA_Key successfully initialized.\r\n");
+    }
+
+    /* Initialize DMA Output Channel */
+    if (init_dma(&dma_output, DMA_OUTPUT) != XST_SUCCESS){
+        xil_printf("DMA_Output initialization failed.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    } else {
+        xil_printf("DMA_Output successfully initialized.\r\n");
+    }
+
+    /* Prepare input buffers with meaningful data */
+    // Example Data: "ThisIsMasterKeyX" and "ThisIsSampleText"
+    // Each u32 represents 4 characters in little endian
+    dma0_mm2s_buffer[0] = 0x73696854;  // "This" -> 'T','h','i','s' -> 0x54 0x68 0x69 0x73
+    dma0_mm2s_buffer[1] = 0x614D7349;  // "IsMa" -> 'I','s','M','a'
+    dma0_mm2s_buffer[2] = 0x72657373;  // "sser" -> 's','s','e','r'
+    dma0_mm2s_buffer[3] = 0x7859654B;  // "KeyX" -> 'K','e','y','X'
+
+    dma1_mm2s_buffer[0] = 0x73696854;  // "This"
+    dma1_mm2s_buffer[1] = 0x61537349;  // "IsSa" -> 'I','s','S','a'
+    dma1_mm2s_buffer[2] = 0x656C706D;  // "mple" -> 'm','p','l','e'
+    dma1_mm2s_buffer[3] = 0x74786554;  // "Text" -> 'T','e','x','t'
+
+    /* Clear the output buffer */
+    memset(dma2_s2mm_buffer, 0, BUFFER_SIZE_BYTES);
+
+    xil_printf("Flushing cache for input buffers...\r\n");
+    /* Flush the cache to ensure data is written to memory */
+    Xil_DCacheFlushRange((UINTPTR)dma0_mm2s_buffer, BUFFER_SIZE_BYTES);
+    Xil_DCacheFlushRange((UINTPTR)dma1_mm2s_buffer, BUFFER_SIZE_BYTES);
+    Xil_DCacheFlushRange((UINTPTR)dma2_s2mm_buffer, BUFFER_SIZE_BYTES);
+    xil_printf("Cache flushed successfully.\r\n");
+
+    /* Start MM2S DMA transfer for Text */
+    status = XAxiDma_SimpleTransfer(&dma_text, (UINTPTR)dma0_mm2s_buffer, BUFFER_SIZE_BYTES, XAXIDMA_DMA_TO_DEVICE);
+    if (status != XST_SUCCESS) {
+        xil_printf("DMA_Text MM2S transfer failed.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    } else {
+        xil_printf("DMA_Text MM2S transfer initiated.\r\n");
+    }
+
+    /* Start MM2S DMA transfer for Key */
+    status = XAxiDma_SimpleTransfer(&dma_key, (UINTPTR)dma1_mm2s_buffer, BUFFER_SIZE_BYTES, XAXIDMA_DMA_TO_DEVICE);
+    if (status != XST_SUCCESS) {
+        xil_printf("DMA_Key MM2S transfer failed.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    } else {
+        xil_printf("DMA_Key MM2S transfer initiated.\r\n");
+    }
+
+    /* Start S2MM DMA transfer for Output */
+    status = XAxiDma_SimpleTransfer(&dma_output, (UINTPTR)dma2_s2mm_buffer, BUFFER_SIZE_BYTES, XAXIDMA_DEVICE_TO_DMA);
+    if (status != XST_SUCCESS) {
+        xil_printf("DMA_Output S2MM transfer failed.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    } else {
+        xil_printf("DMA_Output S2MM transfer initiated.\r\n");
+    }
+
+    /* Wait for DMA_Text MM2S transfer to complete */
+    xil_printf("Waiting for DMA_Text MM2S transfer to complete...\r\n");
+    timeout = 1000000; // Adjust as necessary
+    while (XAxiDma_Busy(&dma_text, XAXIDMA_DMA_TO_DEVICE) && --timeout);
+    if (timeout == 0) {
+        xil_printf("Timeout: DMA_Text MM2S transfer not completed.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    } else {
+        xil_printf("DMA_Text MM2S transfer completed.\r\n");
+    }
+
+    /* Wait for DMA_Key MM2S transfer to complete */
+    xil_printf("Waiting for DMA_Key MM2S transfer to complete...\r\n");
+    timeout = 1000000; // Reset timeout
+    while (XAxiDma_Busy(&dma_key, XAXIDMA_DMA_TO_DEVICE) && --timeout);
+    if (timeout == 0) {
+        xil_printf("Timeout: DMA_Key MM2S transfer not completed.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    } else {
+        xil_printf("DMA_Key MM2S transfer completed.\r\n");
+    }
+
+    /* Wait for DMA_Output S2MM transfer to complete */
+    xil_printf("Waiting for DMA_Output S2MM transfer to complete...\r\n");
+    timeout = 1000000; // Reset timeout
+    while (XAxiDma_Busy(&dma_output, XAXIDMA_DEVICE_TO_DMA) && --timeout);
+    if (timeout == 0) {
+        xil_printf("Timeout: DMA_Output S2MM transfer not completed.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    } else {
+        xil_printf("DMA_Output S2MM transfer completed.\r\n");
+    }
+
+    xil_printf("All DMA transfers completed successfully.\r\n");
+
+    /* Invalidate cache to ensure data is read from memory */
+    xil_printf("Invalidating cache for output buffer...\r\n");
+    Xil_DCacheInvalidateRange((UINTPTR)dma2_s2mm_buffer, BUFFER_SIZE_BYTES);
+    xil_printf("Cache invalidated successfully.\r\n");
+
+    /* Display the received output data */
+    xil_printf("Received Output Data: ");
+    for(int i = 0; i < BUFFER_SIZE_WORDS; i++) {
+        xil_printf("0x%08X ", dma2_s2mm_buffer[i]);
+    }
+    xil_printf("\r\n");
+
+    /* Additional Error Checking */
+    if (XAxiDma_HasErrors(&dma_text)) {
+        xil_printf("DMA_Text encountered an error during transfer.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    }
+
+    if (XAxiDma_HasErrors(&dma_key)) {
+        xil_printf("DMA_Key encountered an error during transfer.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    }
+
+    if (XAxiDma_HasErrors(&dma_output)) {
+        xil_printf("DMA_Output encountered an error during transfer.\r\n");
+        cleanup_platform();
+        return XST_FAILURE;
+    }
+
+    xil_printf("DMA transfers completed without errors.\r\n");
+
+    /* Cleanup the platform (e.g., UART) */
+    cleanup_platform();
+    xil_printf("Application completed successfully.\r\n");
+    return XST_SUCCESS;
+}
